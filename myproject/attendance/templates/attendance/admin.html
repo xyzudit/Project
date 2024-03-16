@@ -1,0 +1,25 @@
+{% extends 'admin/base_site.html' %}
+
+{% block content %}
+<div class="app-attendance">
+    <h2>Attendance</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Date</th>
+                <th>Location</th>  <!-- Add 'Location' column -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for attendance in attendances %}
+            <tr>
+                <td>{{ attendance.employee }}</td>
+                <td>{{ attendance.date }}</td>
+                <td>{{ attendance.location }}</td>  <!-- Display location data -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
